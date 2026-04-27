@@ -426,7 +426,8 @@ export default function App() {
       {/* ===== スワイプ ===== */}
       {view === 'swipe' && (
         // height固定+overflow:hiddenで縦スクロールを完全に封じる
-        <div style={{ height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '1rem', backgroundColor: '#111', color: '#fff' }}>
+        // 100dvh = ブラウザのアドレスバー等を除いた実際の表示領域（モバイル対応）
+        <div style={{ height: '100dvh', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '1rem', backgroundColor: '#111', color: '#fff' }}>
           {/* ヘッダー */}
           <div style={{ width: '100%', maxWidth: '440px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <button onClick={() => { setView('projects'); fetchAll(); }} style={{ background: 'none', border: 'none', color: '#aaa', cursor: 'pointer', fontWeight: 'bold', display: 'flex', alignItems: 'center' }}>
